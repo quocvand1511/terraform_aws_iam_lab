@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "cloudtrail:DescribeTrails",
+          "cloudtrail:GetTrailStatus",
+          "cloudtrail:GetEventSelectors",
+          "config:Get*",
+          "config:Describe*",
+          "s3:GetObject",
+          "s3:ListBucket",
+          "logs:GetLogEvents",
+          "logs:DescribeLogStreams",
+          "logs:DescribeLogGroups"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "s3:PutObject",
+          "s3:DeleteObject",
+          "ec2:*",
+          "iam:*",
+          "lambda:*"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }
